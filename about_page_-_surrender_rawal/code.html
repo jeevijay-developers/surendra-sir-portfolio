@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About - Surrender Rawal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#bd0f49",
+                        "primary-light": "#d8316b",
+                        "gold": "#D4AF37",
+                        "gold-dim": "#997b2f",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221016", 
+                        "surface-dark": "#2d161e",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .gold-gradient-text {
+            background: linear-gradient(to right, #D4AF37, #FEE685, #D4AF37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+        .pattern-bg {
+            background-color: #221016;
+            opacity: 1;
+            background-image:  linear-gradient(#2d161e 1.2px, transparent 1.2px), linear-gradient(to right, #2d161e 1.2px, #221016 1.2px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111418] dark:text-white overflow-x-hidden">
+<!-- Navbar -->
+<header class="sticky top-0 z-50 flex items-center justify-between border-b border-solid border-b-[#48232f] bg-[#221016]/95 backdrop-blur-md px-6 py-4 lg:px-20">
+<div class="flex items-center gap-4 text-white">
+<div class="size-8 text-gold">
+<span class="material-symbols-outlined text-3xl">music_note</span>
+</div>
+<h2 class="text-white text-xl font-bold font-serif tracking-wide">Surrender Rawal</h2>
+</div>
+<div class="hidden lg:flex items-center gap-8">
+<nav class="flex items-center gap-8">
+<a class="text-white/80 hover:text-gold text-sm font-medium transition-colors" href="#">Home</a>
+<a class="text-gold text-sm font-medium border-b border-gold pb-0.5 transition-colors" href="#">About</a>
+<a class="text-white/80 hover:text-gold text-sm font-medium transition-colors" href="#">Performances</a>
+<a class="text-white/80 hover:text-gold text-sm font-medium transition-colors" href="#">Gallery</a>
+<a class="text-white/80 hover:text-gold text-sm font-medium transition-colors" href="#">Contact</a>
+</nav>
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary hover:bg-primary-light text-white text-sm font-bold tracking-wide transition-all shadow-[0_0_15px_rgba(189,15,73,0.3)]">
+<span class="truncate">Book for Event</span>
+</button>
+</div>
+<button class="lg:hidden text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<main class="flex flex-col min-h-screen">
+<!-- Hero / Intro Section -->
+<section class="relative px-6 py-12 lg:px-20 lg:py-20 pattern-bg">
+<div class="mx-auto max-w-7xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Text Content -->
+<div class="lg:col-span-7 flex flex-col gap-6 order-2 lg:order-1">
+<div class="flex items-center gap-2 mb-2">
+<span class="h-[1px] w-12 bg-gold"></span>
+<span class="text-gold text-sm font-bold tracking-widest uppercase">The Maestro</span>
+</div>
+<h1 class="text-4xl lg:text-6xl font-serif font-bold leading-tight text-white">
+                            Bridging the Gap Between <br/>
+<span class="gold-gradient-text">Tradition &amp; Soul</span>
+</h1>
+<p class="text-white/80 text-lg leading-relaxed max-w-2xl font-light">
+                            Surrender Rawal brings the majestic traditions of Indian classical music to the modern stage, blending Sufi soul with Bollywood versatility. His voice is a tapestry of emotion, woven with threads of heritage and contemporary flair.
+                        </p>
+<div class="flex gap-3 flex-wrap mt-4">
+<div class="px-4 py-1.5 rounded-full border border-[#48232f] bg-[#2d161e] text-gold text-sm">Ghazal</div>
+<div class="px-4 py-1.5 rounded-full border border-[#48232f] bg-[#2d161e] text-gold text-sm">Classical</div>
+<div class="px-4 py-1.5 rounded-full border border-[#48232f] bg-[#2d161e] text-gold text-sm">Semi-Classical</div>
+<div class="px-4 py-1.5 rounded-full border border-[#48232f] bg-[#2d161e] text-gold text-sm">Sufi</div>
+</div>
+<div class="mt-8 flex gap-4">
+<button class="h-12 px-8 rounded-lg bg-primary hover:bg-primary-light text-white font-bold transition-all flex items-center gap-2 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-[20px]">play_circle</span>
+                                Listen Now
+                            </button>
+<button class="h-12 px-8 rounded-lg border border-gold/30 text-gold hover:bg-gold/10 font-medium transition-all">
+                                View Gallery
+                            </button>
+</div>
+</div>
+<!-- Image Content -->
+<div class="lg:col-span-5 order-1 lg:order-2 relative">
+<!-- Decorative Frame -->
+<div class="absolute inset-0 border border-gold/20 translate-x-4 translate-y-4 rounded-xl z-0 hidden lg:block"></div>
+<div class="relative z-10 aspect-[3/4] w-full overflow-hidden rounded-xl shadow-2xl bg-[#2d161e]">
+<div class="w-full h-full bg-cover bg-center bg-no-repeat transition-transform hover:scale-105 duration-700" data-alt="Portrait of a male Indian classical singer in traditional attire with a microphone" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD0iUxukvdkoM5vr4woauzzczZHv4quz9MAWcGLUckhBORkRhYF8R2l0s9tINHYLo7aqgMohSX3dagIKG9Q1Ja6WtB6PU50oAXgA3QDsQg54j2Yw1yHZWCk9EthsBVnVWKfEc2BWTB8d_zcP2YH7MRVhehU9Y_Xk_nLYhiYnnhHzgmb5Es9bpAJjgsGUzBcQEPwk-dux5olo6BisTWi-bP8MA3fynqjWHu075joSDrGKdcGyAxFAH4v7IyYtuwkU-2iTI9MvdWnP7Lf");'></div>
+<!-- Overlay Gradient -->
+<div class="absolute inset-0 bg-gradient-to-t from-[#221016] via-transparent to-transparent opacity-60"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Quote Section -->
+<section class="bg-surface-dark py-16 px-6 lg:px-20 border-y border-[#48232f]">
+<div class="mx-auto max-w-4xl text-center">
+<span class="material-symbols-outlined text-gold text-5xl opacity-50 mb-6">format_quote</span>
+<blockquote class="text-2xl lg:text-3xl font-serif text-white/90 leading-normal italic mb-8">
+                    "Music is not just an arrangement of notes; it is the silence between them where the soul truly resides. My journey is to find that silence and share it with the world."
+                </blockquote>
+<div class="flex items-center justify-center gap-4">
+<div class="h-[1px] w-12 bg-gold/50"></div>
+<cite class="text-gold font-display font-medium not-italic">Surrender Rawal</cite>
+<div class="h-[1px] w-12 bg-gold/50"></div>
+</div>
+</div>
+</section>
+<!-- Biography Detail Section -->
+<section class="py-20 px-6 lg:px-20 bg-background-dark">
+<div class="mx-auto max-w-7xl">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+<!-- Left Sidebar / Stats -->
+<div class="md:col-span-4 lg:col-span-3 flex flex-col gap-8">
+<div class="bg-surface-dark p-6 rounded-xl border border-[#48232f]">
+<h3 class="text-white font-serif text-xl mb-4 border-b border-[#48232f] pb-2">Experience</h3>
+<ul class="space-y-4">
+<li class="flex flex-col">
+<span class="text-gold font-bold text-lg">20+</span>
+<span class="text-white/60 text-sm">Years of Training</span>
+</li>
+<li class="flex flex-col">
+<span class="text-gold font-bold text-lg">500+</span>
+<span class="text-white/60 text-sm">Live Concerts</span>
+</li>
+<li class="flex flex-col">
+<span class="text-gold font-bold text-lg">Global</span>
+<span class="text-white/60 text-sm">International Tours</span>
+</li>
+</ul>
+</div>
+<div class="bg-surface-dark p-6 rounded-xl border border-[#48232f]">
+<h3 class="text-white font-serif text-xl mb-4 border-b border-[#48232f] pb-2">Specialties</h3>
+<div class="flex flex-wrap gap-2">
+<span class="bg-[#221016] text-white/80 text-xs px-3 py-1 rounded-full border border-[#48232f]">Thumri</span>
+<span class="bg-[#221016] text-white/80 text-xs px-3 py-1 rounded-full border border-[#48232f]">Dadra</span>
+<span class="bg-[#221016] text-white/80 text-xs px-3 py-1 rounded-full border border-[#48232f]">Khayal</span>
+<span class="bg-[#221016] text-white/80 text-xs px-3 py-1 rounded-full border border-[#48232f]">Fusion</span>
+</div>
+</div>
+</div>
+<!-- Main Biography Text -->
+<div class="md:col-span-8 lg:col-span-9 space-y-8">
+<div>
+<h2 class="text-3xl font-serif text-white mb-6">The Artist's Journey</h2>
+<div class="space-y-6 text-white/70 leading-loose text-lg font-light">
+<p>
+<span class="text-5xl float-left mr-3 mt-[-10px] text-gold font-serif">B</span>orn into a lineage of musical excellence, Surrender's journey began at a tender age under the tutelage of renowned maestros. His voice is not just a sound, but a narrative of emotion, trained in the rigors of classical discipline and polished by years of performance.
+                                </p>
+<p>
+                                    Surrender’s approach to music is deeply rooted in the 'Guru-Shishya Parampara,' yet he is unafraid to experiment. He seamlessly bridges the gap between the purist traditions of Indian Classical music and the accessible, emotive world of Bollywood and Ghazals. This unique versatility allows him to connect with audiences across generations.
+                                </p>
+<p>
+                                    Having performed at prestigious venues across India, Europe, and North America, Surrender has earned accolades for his soulful renditions and his ability to hold a crowd spellbound. Whether it is a private 'Baithak' or a large auditorium concert, his commitment to the art form remains unwavering—to touch the heart of the listener.
+                                </p>
+</div>
+</div>
+<!-- Image Grid for Context -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6">
+<div class="relative h-64 rounded-lg overflow-hidden group">
+<div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Atmospheric shot of a dimly lit stage with musical instruments like Tabla and Harmonium" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB4U7k2uDmu1M3NgXDmnq0ZaUKk0csZdonAA8inHQ7hBPGxNdf6xWweZ4SiaIfba0EJQrFqFFcvibe7GwKEihpO08wQGin9-phzN6e4saTSKhaIgUkiE6YYqV1HaN3VmAuQoSnYaDUItEVZn_eZlwB4H7WahRcHLq5kzqOmYs8sAi6EsO5MLrqpXPksZI5rKBaiE9h5D_k_4mOs3cu7yOk6_paOLYfm_yHW5q1xim6n6Adjo8SjCGOuOGega5DPoqK2kOZW99_08PCf");'></div>
+<div class="absolute bottom-3 left-3 z-20">
+<p class="text-white text-sm font-bold bg-black/50 px-2 py-1 rounded backdrop-blur-sm">Live at Royal Opera House</p>
+</div>
+</div>
+<div class="relative h-64 rounded-lg overflow-hidden group">
+<div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Abstract close up of a vintage microphone with warm bokeh lights" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDAVEEtPhdAUjDkZtvXe6BZ9QUr9HUnoHhSzo8SZRpyMGtqb1ZX8WntQZqLiNhly3AHCHvrBY47cSt6XOqNrrz-Hek-krt3YZJo1V_f2vz9etG4_a6taUjJINF21-JpXU70RvhQwC2Xcb3XvhiKrKviLU-UinYb4TFaNY_QDf9f8P_HvLVTepi6Y863S7rM7BEysS7Z5gyqauCzVScrIK1p5b2otRnVo-chPpePuOOhfi70v-Fzeq90NBJeXnFkMuwJN6XgmWQ0SEk6");'></div>
+<div class="absolute bottom-3 left-3 z-20">
+<p class="text-white text-sm font-bold bg-black/50 px-2 py-1 rounded backdrop-blur-sm">Studio Sessions 2023</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-20 px-6 lg:px-20 bg-primary/10 border-t border-[#48232f]">
+<div class="mx-auto max-w-4xl text-center">
+<h2 class="text-3xl lg:text-4xl font-serif font-bold text-white mb-4">Experience the Magic Live</h2>
+<p class="text-white/70 mb-8 text-lg">Book Surrender Rawal for concerts, private events, and weddings. Bring the royal essence of classical music to your occasion.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-primary hover:bg-primary-light text-white font-bold transition-all shadow-lg">
+                        Contact for Booking
+                    </button>
+<button class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-transparent border border-white/20 hover:bg-white/5 text-white font-bold transition-all">
+                        Download Press Kit
+                    </button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#1a0c11] border-t border-[#48232f] text-white py-12 px-6 lg:px-20">
+<div class="mx-auto max-w-7xl flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col items-center md:items-start gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-gold">music_note</span>
+<span class="font-serif text-lg font-bold">Surrender Rawal</span>
+</div>
+<p class="text-sm text-white/50">© 2024 Surrender Rawal. All rights reserved.</p>
+</div>
+<div class="flex gap-6">
+<a class="text-white/60 hover:text-gold transition-colors" href="#">
+<span class="sr-only">Instagram</span>
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772 4.902 4.902 0 011.772-1.153c.636-.247 1.363-.416 2.427-.465C9.673 2.013 10.03 2 12.48 2h-.165zm-2.344 14.136a3.796 3.796 0 115.392-5.392 3.796 3.796 0 01-5.392 5.392zm5.728-9.088a1.44 1.44 0 112.88 0 1.44 1.44 0 01-2.88 0zm-5.728 5.488a2.356 2.356 0 100-4.712 2.356 2.356 0 000 4.712z" fill-rule="evenodd"></path></svg>
+</a>
+<a class="text-white/60 hover:text-gold transition-colors" href="#">
+<span class="sr-only">Facebook</span>
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
+</a>
+<a class="text-white/60 hover:text-gold transition-colors" href="#">
+<span class="sr-only">YouTube</span>
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.418-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418zM15.194 12 10 15V9l5.194 3z" fill-rule="evenodd"></path></svg>
+</a>
+</div>
+</div>
+</footer>
+</main>
+</body></html>

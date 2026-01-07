@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gallery - Surrender Rawal</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;family=Noto+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#bd0f2c",
+                        "primary-dark": "#8a0b20",
+                        "accent-gold": "#D4AF37",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221013",
+                        "surface-dark": "#2d161a",
+                    },
+                    fontFamily: {
+                        "display": ["Noto Serif", "serif"],
+                        "sans": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    backgroundImage: {
+                        'jaali-pattern': "url(\"data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18C20 18 20 18 20 18l-2.12-2.12C16.75 14.76 16.75 12.87 17.88 11.75c1.13-1.13 3.01-1.13 4.12 0l2.12 2.12 2.12-2.12c1.13-1.13 3.01-1.13 4.12 0 1.13 1.13 1.13 3.01 0 4.12L28.24 18H20.5v7.76l2.12-2.12c1.13-1.13 3.01-1.13 4.12 0 1.13 1.13 1.13 3.01 0 4.12l-2.12 2.12-2.12-2.12c-1.13-1.13-3.01-1.13-4.12 0L18 27.76v2.5h-2.5v-2.5l-2.12 2.12c-1.13 1.13-3.01 1.13-4.12 0-1.13-1.13-1.13-3.01 0-4.12l2.12-2.12-2.12-2.12c-1.13-1.13-3.01-1.13-4.12 0-1.13 1.13-1.13 3.01 0 4.12L11.76 18H18v-2.5h2.5v5zM0 20.5V18c0-2.42.82-4.66 2.2-6.42l-2.12-2.12c-1.13-1.13-1.13-3.01 0-4.12 1.13-1.13 3.01-1.13 4.12 0l2.12 2.12C8.08 6.02 10.32 5.2 12.74 5.2c2.42 0 4.66.82 6.42 2.2l-2.12 2.12c-1.13 1.13-1.13 3.01 0 4.12 1.13 1.13 3.01 1.13 4.12 0l2.12-2.12c1.76 1.38 2.58 3.62 2.58 6.04 0 2.42-.82 4.66-2.2 6.42l2.12 2.12c1.13 1.13 1.13 3.01 0 4.12-1.13 1.13-3.01 1.13-4.12 0l-2.12-2.12c-1.76 1.38-4 2.2-6.42 2.2-2.42 0-4.66-.82-6.42-2.2l2.12-2.12c1.13-1.13 1.13-3.01 0-4.12-1.13-1.13-3.01-1.13-4.12 0l-2.12 2.12C0.82 25.16 0 22.92 0 20.5z' fill='%23bd0f2c' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E\")",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .card-hover-zoom {
+            transition: transform 0.5s ease-in-out, box-shadow 0.5s ease;
+        }
+        .card-hover-zoom:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px -10px rgba(189, 15, 44, 0.3);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #221013;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #482329;
+            border-radius: 20px;
+        }
+        .fancy-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin: 2rem 0;
+        }
+        .fancy-divider::before,
+        .fancy-divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        .fancy-divider span {
+            padding: 0 1rem;
+            color: #D4AF37;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-sans custom-scrollbar">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 w-full backdrop-blur-md bg-background-dark/90 border-b border-[#482329]">
+<div class="layout-container flex justify-center w-full">
+<div class="px-5 md:px-10 lg:px-40 flex flex-1 justify-center py-0">
+<div class="flex items-center justify-between w-full max-w-[1200px] py-4">
+<!-- Logo Section -->
+<div class="flex items-center gap-4 text-white">
+<div class="size-8 text-primary">
+<!-- Using a stylized music note or similar icon -->
+<span class="material-symbols-outlined text-3xl">music_note</span>
+</div>
+<h2 class="text-white text-xl font-display font-bold leading-tight tracking-[-0.015em]">Surrender Rawal</h2>
+</div>
+<!-- Desktop Nav -->
+<div class="hidden md:flex flex-1 justify-end items-center gap-8">
+<nav class="flex items-center gap-9">
+<a class="text-white/80 hover:text-primary transition-colors text-sm font-medium font-display" href="#">Home</a>
+<a class="text-white/80 hover:text-primary transition-colors text-sm font-medium font-display" href="#">About</a>
+<a class="text-white/80 hover:text-primary transition-colors text-sm font-medium font-display" href="#">Music</a>
+<a class="text-primary text-sm font-bold font-display" href="#">Gallery</a>
+<a class="text-white/80 hover:text-primary transition-colors text-sm font-medium font-display" href="#">Contact</a>
+</nav>
+<!-- Social Icons -->
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-lg size-10 bg-[#482329] text-accent-gold hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">play_circle</span>
+</button>
+<button class="flex items-center justify-center rounded-lg size-10 bg-[#482329] text-accent-gold hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">campaign</span>
+</button>
+</div>
+</div>
+<!-- Mobile Menu Button -->
+<div class="md:hidden flex items-center">
+<button class="text-white p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Wrapper with Pattern Background -->
+<main class="relative min-h-screen w-full flex flex-col items-center bg-jaali-pattern">
+<!-- Decorative Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-b from-background-dark via-transparent to-background-dark pointer-events-none"></div>
+<div class="relative w-full max-w-[1200px] px-5 md:px-10 lg:px-40 py-10 flex flex-col gap-8 z-10">
+<!-- Page Heading -->
+<div class="flex flex-col items-center text-center gap-4 py-8">
+<div class="flex items-center gap-2 text-accent-gold opacity-80">
+<span class="material-symbols-outlined text-sm">local_florist</span>
+<span class="text-xs uppercase tracking-[0.2em] font-display">Portfolio Showcase</span>
+<span class="material-symbols-outlined text-sm">local_florist</span>
+</div>
+<h1 class="text-white text-5xl md:text-6xl font-display font-black leading-tight tracking-[-0.033em] text-shadow-sm">
+                    Gallery
+                </h1>
+<p class="text-[#c9929b] text-lg font-display font-normal leading-normal max-w-2xl">
+                    A visual journey through melody and tradition, capturing the essence of Ghazal, Sufi, and Classical performances.
+                </p>
+</div>
+<!-- Tabs/Filters -->
+<div class="flex justify-center w-full mb-8">
+<div class="flex flex-wrap justify-center gap-2 border-b border-[#482329] pb-1 w-full max-w-2xl">
+<button class="group flex flex-col items-center px-4 py-3 border-b-2 border-primary text-white transition-all">
+<span class="text-sm font-bold font-display tracking-wider">All</span>
+</button>
+<button class="group flex flex-col items-center px-4 py-3 border-b-2 border-transparent hover:border-accent-gold/50 text-[#c9929b] hover:text-white transition-all">
+<span class="text-sm font-bold font-display tracking-wider">Live Concerts</span>
+</button>
+<button class="group flex flex-col items-center px-4 py-3 border-b-2 border-transparent hover:border-accent-gold/50 text-[#c9929b] hover:text-white transition-all">
+<span class="text-sm font-bold font-display tracking-wider">Portraits</span>
+</button>
+<button class="group flex flex-col items-center px-4 py-3 border-b-2 border-transparent hover:border-accent-gold/50 text-[#c9929b] hover:text-white transition-all">
+<span class="text-sm font-bold font-display tracking-wider">Press &amp; Media</span>
+</button>
+</div>
+</div>
+<!-- Masonry Grid Layout -->
+<!-- Using CSS Grid for simplicity but simulating masonry with different spans -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[300px]">
+<!-- Item 1: Tall Portrait -->
+<div class="group relative row-span-2 rounded-xl overflow-hidden card-hover-zoom cursor-pointer shadow-lg bg-surface-dark border border-[#482329]/30">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Close up portrait of a singer with intense expression" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBBe7KEOzU-wrXwZA2q_9wqD8flecjIvK2kS-ocpwh9PYRXM4ilEKWTgFsPs5tOpkoYI2F6E54qZl01lfld_KH-CIa8IFllHd9fddjxt4JuY0vY6Y6U7SYOO_C-JBOIT__uCAu2kxD31Agy4pwlhX2OwM5xKYfzFxb45bpbOlbZfhBhxB1_S0KjpQbDFX8YWnJUeu6MS-6elBetXoqTyDVHnQK0ccMuk8N-y1mwlWUfiS5y2tfar7FCSyKLWrlGbIK2LFgFTqt70gep');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+<span class="text-accent-gold text-xs font-bold uppercase tracking-widest mb-1 block">Portrait</span>
+<h3 class="text-white text-xl font-display font-bold">The Soulful Gaze</h3>
+<div class="h-0.5 w-0 group-hover:w-12 bg-primary mt-3 transition-all duration-500 delay-100"></div>
+</div>
+</div>
+<!-- Item 2: Landscape -->
+<div class="group relative rounded-xl overflow-hidden card-hover-zoom cursor-pointer shadow-lg bg-surface-dark border border-[#482329]/30">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Wide shot of a live concert stage with warm lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBOSDDsWaKW1rmsdteW8exwlzlJfSomPGQu01rU9wlDCFO4CP4osgkEC46IkRQo-8RXShLZBkx-C0raIhAJXE8oxrJmgZ76hPVYDgM1CwDy8pF9ob0cVUqjflGTJho472P_TzpRr_oelH3ZwuxZwrSU6lgfbdKtpOF-msTIW-p03TbxK9_F0-9fj8rqBtFULJ2gONKkURmCLnIgTE087J24_iRfnXWobFBJwIopQmzEaxKhd_fga8wwoonfv3Q5HtvDuPGGWT8hXHhw');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+<span class="text-accent-gold text-xs font-bold uppercase tracking-widest mb-1 block">Live</span>
+<h3 class="text-white text-xl font-display font-bold">Royal Opera House</h3>
+</div>
+</div>
+<!-- Item 3: Landscape -->
+<div class="group relative rounded-xl overflow-hidden card-hover-zoom cursor-pointer shadow-lg bg-surface-dark border border-[#482329]/30">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Musicians playing traditional instruments in a group" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA8ias9Yq5-54x9DOkGNLGBRQjb-6LCMH1KNDY-MT51FMAoYzE93IP0Gnbq_E6LVZ2NYaNTavNjk9546mh-w68Z3_rALe1m91IFMBIZ1ag0td9922Dkj51FpfztCyQq-rWjuiCkX0yGAFztNzZcObHSjTC5oRzZJjH9nkHqINisVjvjg-H0xwSdgVDLgRdHMaryqX6b6ztYTrAC1JuCf7Cja1j_OT6anQGnkrqQutHffT1Eo__gvtdK3AlVSouxOHB-8eixmX2PXdu_');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+<span class="text-accent-gold text-xs font-bold uppercase tracking-widest mb-1 block">Ensemble</span>
+<h3 class="text-white text-xl font-display font-bold">Sufi Night 2023</h3>
+</div>
+</div>
+<!-- Item 4: Tall Portrait -->
+<div class="group relative row-span-2 rounded-xl overflow-hidden card-hover-zoom cursor-pointer shadow-lg bg-surface-dark border border-[#482329]/30">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Artistic shot of a microphone with blurred background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCFF_MnPDVHrSUaFgLSq56yTa779MbzOp1xKXIfZBz62Dq7X_VehBSRJEGWdx8z_Y6T4P1KMooeDsdSI4xBwSJ4-YI0RZYneGI4JDvbOOZubhlQHEHO_YFwNod2PtwE27dBpFVGhEzmuxrf-2Sfy_tnLP6waw9MQy63PUx07fFg4OpdKTh1DaeY2ItV5Dui9xtQqGqxpYp2dq8rD2K0m0ye1yI3NfTXMPPLXOchUKtho2JRjCIdjxEgdC0w0Sg44NT7KbDuoUaeubwr');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+<span class="text-accent-gold text-xs font-bold uppercase tracking-widest mb-1 block">Detail</span>
+<h3 class="text-white text-xl font-display font-bold">The Instrument</h3>
+<div class="h-0.5 w-0 group-hover:w-12 bg-primary mt-3 transition-all duration-500 delay-100"></div>
+</div>
+</div>
+<!-- Item 5: Landscape -->
+<div class="group relative rounded-xl overflow-hidden card-hover-zoom cursor-pointer shadow-lg bg-surface-dark border border-[#482329]/30">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Silhouette of a performer against stage lights" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAj3bUTiOyryJvIh2MtIFRGuzctiX5mxrC36B0I5ryGK8toa0ee25on7JW_OpcDdenOU3lPjNQwJYv5t1bOuW3Mq4E7zx_c6JGQXKnYYDdKOnu4Fq2AH7J9-_-cpnMjWPG6_7THqJmZvGJX1eLhX4A2LRuH4xHH-muJX2lVQuObOjvqrkJeNKRL16Jf7qi8JYnTsqbqqlJTa2nurRIcUihj6ohrKEuISpdobXw-Vp0OY-gPR8MnrrBsRfaMhKw3J2gS79ppXAWuZUoV');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+<span class="text-accent-gold text-xs font-bold uppercase tracking-widest mb-1 block">Live</span>
+<h3 class="text-white text-xl font-display font-bold">Shadows &amp; Light</h3>
+</div>
+</div>
+<!-- Item 6: Tall Portrait (Simulated via row span) -->
+<div class="group relative row-span-2 rounded-xl overflow-hidden card-hover-zoom cursor-pointer shadow-lg bg-surface-dark border border-[#482329]/30">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Traditional Indian instruments resting on a rug" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDZ1OIlfwfpIMbDx07gYS7-aJt4wg-hYZCgePdJ25R4M14qLA9wrmRI5nyzHarRTGb4L7ANv3lNpkkM6jRFI9D4AMYtxMuIaT50nCNBKaKJzvZcxDBOJhIwwS-PFMJ-kAeNHPGn_saRGlcSN7Z-yl9axtKKpQP3cV4JzLMZ9ivhPaARXxYjAK5GO6Gqq6YmPLs15kt_JBvJ_5eAxGzBgwmHpznb_Mi2VBZ74uvA7b1-pLbXsNUxGegbMlBTsicEpVnMQhvAy-IJjx5Z');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+<span class="text-accent-gold text-xs font-bold uppercase tracking-widest mb-1 block">Heritage</span>
+<h3 class="text-white text-xl font-display font-bold">Roots of Melody</h3>
+<div class="h-0.5 w-0 group-hover:w-12 bg-primary mt-3 transition-all duration-500 delay-100"></div>
+</div>
+</div>
+<!-- Item 7: Landscape -->
+<div class="group relative rounded-xl overflow-hidden card-hover-zoom cursor-pointer shadow-lg bg-surface-dark border border-[#482329]/30">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Artist recording in a studio setting with headphones" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB24eTQ2V6uAKlt4OBgRovMBTEvYQr3SQnT02unah_VlY12sEFRHXv5o8Dpy0o69J2KkUwaWcdipzhWt3aLlAUuGU9_gJpeK_HeOHGVk0uWTY1XybKpACF9gLvugijd25dp8_J959JWm5PaRtW9S2JDVurN5KimYm7HddMSKJzNg7AlUgFxQWGH4KKfz9gNJDMdXVDBW8QZmX3rNCUNTyAh6-Thiq4BvQcH4nWP2Q8hN9gFGhpVYdS9D5iZYGtXEJlOoZAg1MoIrTvm');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+<span class="text-accent-gold text-xs font-bold uppercase tracking-widest mb-1 block">Studio</span>
+<h3 class="text-white text-xl font-display font-bold">Recording Session</h3>
+</div>
+</div>
+<!-- Item 8: Landscape -->
+<div class="group relative rounded-xl overflow-hidden card-hover-zoom cursor-pointer shadow-lg bg-surface-dark border border-[#482329]/30">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Artist signing autographs for fans" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAeZh6uSG6UWBgVREJRFzIrBZ2jVpGLMogbxIy8QeYGlCinYp1PmxQuF17QY6S_cvZvR-fH0SiikQBkD0-_KElP_Y86Tt-C84oLNUv1JO1NtKZiNCvaX9_P--wpZR-LLrNuBKvKTcjWCdlijvvugXSzmH2LQ_tFc5AN_B7L37vaATLHROFdwPxNX9R73ox9rFjUN_yNLn-TbfZLvCFPEErAFRczzLsJXg3p716q2Ma0btns2mwhTnDDufNOzvWafhLvOG-PwaDZr9bE');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+<span class="text-accent-gold text-xs font-bold uppercase tracking-widest mb-1 block">Community</span>
+<h3 class="text-white text-xl font-display font-bold">Fan Interaction</h3>
+</div>
+</div>
+</div>
+<div class="flex justify-center mt-8">
+<button class="px-8 py-3 rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition-all font-display font-bold uppercase tracking-widest text-sm flex items-center gap-2">
+                    Load More
+                    <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+<!-- Ornamental Divider -->
+<div class="fancy-divider">
+<span class="material-symbols-outlined">diamond</span>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-background-dark border-t border-[#482329] text-center">
+<div class="layout-container px-5 md:px-10 lg:px-40 py-12 flex flex-col items-center gap-8">
+<div class="flex flex-col gap-2">
+<h3 class="text-white text-2xl font-display font-bold">Surrender Rawal</h3>
+<p class="text-[#c9929b] text-sm italic">"Where words fail, music speaks."</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="group" href="#">
+<div class="size-10 rounded-full border border-[#482329] flex items-center justify-center text-[#c9929b] group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">
+<span class="material-symbols-outlined">alternate_email</span> <!-- Placeholder for social -->
+</div>
+</a>
+<a class="group" href="#">
+<div class="size-10 rounded-full border border-[#482329] flex items-center justify-center text-[#c9929b] group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">
+<span class="material-symbols-outlined">play_arrow</span> <!-- Placeholder for Youtube -->
+</div>
+</a>
+<a class="group" href="#">
+<div class="size-10 rounded-full border border-[#482329] flex items-center justify-center text-[#c9929b] group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">
+<span class="material-symbols-outlined">music_note</span> <!-- Placeholder for Spotify -->
+</div>
+</a>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-[#c9929b]/60 text-xs font-normal leading-normal">© 2023 Surrender Rawal. All Rights Reserved.</p>
+<div class="flex justify-center gap-4 text-[#c9929b]/40 text-xs mt-2">
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+<a class="hover:text-primary" href="#">Terms of Use</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

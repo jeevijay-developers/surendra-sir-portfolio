@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bookings &amp; Contact - Surrender Rawal</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Manrope -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4c025",
+                        "primary-hover": "#dcb022",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#231e10",
+                        "accent-maroon": "#3E1F24",
+                        "card-dark": "#2A2416", 
+                        "text-muted": "#cbbc90"
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>/* Custom scrollbar for a cleaner look */
+::-webkit-scrollbar {
+    width: 8px
+    }
+::-webkit-scrollbar-track {
+    background: #231e10
+    }
+::-webkit-scrollbar-thumb {
+    background: #493f22;
+    border-radius: 4px
+    }
+/* Subtle Background Pattern inspired by Indian classical strings */
+.bg-pattern {
+    background-image: radial-gradient(circle at 100% 0%, rgba(244, 192, 37, 0.03) 0%, transparent 25%), radial-gradient(circle at 0% 100%, rgba(244, 192, 37, 0.03) 0%, transparent 25%), linear-gradient(rgba(35, 30, 16, 0.95), rgba(35, 30, 16, 0.95)), url(https://lh3.googleusercontent.com/aida-public/AB6AXuAoMFVI941ndxJvaQRKkvGqmrRUZK6KXEF6kigav-pCdv4wedVCCm4yHi5Z9CvT9uMPBTOZjiYwvlzaNGGFAMq4VVwBVmCHBH-xNHQ1myAfXW2pqzaLF5aNjJcXeK6hLa-YYj_69a9ycHfc7XHZTzUQWI52rJx4Sm0zIa8pzILQt5jDD4c0hbn4wVKfsDPYsN-s8fSKrxSitBBO3OwwBGMduRgcxiWTH8MTSHvC54UKBzliHAxG3nw4yop1nVUHlJmtXZ-9tLsRwucO)
+    }</style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-white antialiased min-h-screen flex flex-col">
+<!-- Navbar -->
+<header class="sticky top-0 z-50 w-full border-b border-solid border-[#493f22] bg-[#231e10]/95 backdrop-blur-md">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<div class="flex h-20 items-center justify-between">
+<!-- Logo / Name -->
+<div class="flex items-center gap-4">
+<div class="size-8 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 4C12.95 4 4 12.95 4 24C4 35.05 12.95 44 24 44C35.05 44 44 35.05 44 24C44 12.95 35.05 4 24 4ZM24 40C15.16 40 8 32.84 8 24C8 15.16 15.16 8 24 8C32.84 8 40 15.16 40 24C40 32.84 32.84 40 24 40Z" fill="currentColor"></path>
+<path d="M24 14C19.03 14 15 18.03 15 23H19C19 20.24 21.24 18 24 18C26.76 18 29 20.24 29 23C29 25.76 26.76 28 24 28V32C28.97 32 33 27.97 33 23C33 18.03 28.97 14 24 14Z" fill="currentColor"></path>
+<path d="M24 34C23.45 34 23 34.45 23 35C23 35.55 23.45 36 24 36C24.55 36 25 35.55 25 35C25 34.45 24.55 34 24 34Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-white text-xl font-bold tracking-tight">Surrender Rawal</h2>
+</div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-white/80 hover:text-primary transition-colors text-sm font-medium" href="#">Home</a>
+<a class="text-white/80 hover:text-primary transition-colors text-sm font-medium" href="#">Biography</a>
+<a class="text-white/80 hover:text-primary transition-colors text-sm font-medium" href="#">Music</a>
+<a class="text-white/80 hover:text-primary transition-colors text-sm font-medium" href="#">Gallery</a>
+<a class="text-white/80 hover:text-primary transition-colors text-sm font-medium" href="#">Bookings</a>
+</nav>
+<!-- CTA Button -->
+<div class="hidden md:block">
+<button class="flex items-center justify-center rounded-lg bg-primary px-6 py-2.5 text-background-dark text-sm font-bold hover:bg-primary-hover transition-all">
+                        Book Now
+                    </button>
+</div>
+<!-- Mobile Menu Button -->
+<button class="md:hidden p-2 text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow bg-pattern flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8">
+<div class="w-full max-w-6xl">
+<!-- Hero Section -->
+<div class="mb-16 text-center md:text-left">
+<div class="inline-flex items-center gap-2 mb-4 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold tracking-wide uppercase">
+<span class="material-symbols-outlined text-sm">stars</span>
+<span>Royal Performances</span>
+</div>
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight mb-4 leading-tight">
+                    Bookings <span class="text-primary">&amp;</span> Contact
+                </h1>
+<p class="text-text-muted text-lg md:text-xl max-w-2xl font-light">
+                    Available for Ghazal nights, Classical concerts, private weddings, and Sufi collaborations. Let's create an unforgettable musical experience.
+                </p>
+</div>
+<!-- Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+<!-- Left Column: Contact Form -->
+<div class="lg:col-span-7 bg-card-dark border border-[#493f22] rounded-2xl p-6 md:p-8 shadow-2xl relative overflow-hidden group">
+<!-- Decorative corner accent -->
+<div class="absolute top-0 right-0 -mt-10 -mr-10 w-32 h-32 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-all duration-700"></div>
+<h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">mail</span>
+                        Send a Message
+                    </h2>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<label class="block">
+<span class="text-white text-sm font-semibold mb-2 block">Full Name</span>
+<input class="w-full rounded-lg bg-[#342d18] border border-[#685a31] text-white px-4 py-3 placeholder:text-[#cbbc90]/50 focus:border-primary focus:ring-1 focus:ring-primary transition-colors outline-none" placeholder="Enter your full name" type="text"/>
+</label>
+<label class="block">
+<span class="text-white text-sm font-semibold mb-2 block">Email Address</span>
+<input class="w-full rounded-lg bg-[#342d18] border border-[#685a31] text-white px-4 py-3 placeholder:text-[#cbbc90]/50 focus:border-primary focus:ring-1 focus:ring-primary transition-colors outline-none" placeholder="name@example.com" type="email"/>
+</label>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<label class="block">
+<span class="text-white text-sm font-semibold mb-2 block">Phone Number</span>
+<input class="w-full rounded-lg bg-[#342d18] border border-[#685a31] text-white px-4 py-3 placeholder:text-[#cbbc90]/50 focus:border-primary focus:ring-1 focus:ring-primary transition-colors outline-none" placeholder="+91 98765 00000" type="tel"/>
+</label>
+<label class="block">
+<span class="text-white text-sm font-semibold mb-2 block">Event Type</span>
+<select class="w-full rounded-lg bg-[#342d18] border border-[#685a31] text-white px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary transition-colors outline-none appearance-none">
+<option>Select an event type...</option>
+<option>Wedding Performance</option>
+<option>Corporate Event</option>
+<option>Private Concert</option>
+<option>Music Collaboration</option>
+<option>Other</option>
+</select>
+</label>
+</div>
+<label class="block">
+<span class="text-white text-sm font-semibold mb-2 block">Tell us about your event</span>
+<textarea class="w-full rounded-lg bg-[#342d18] border border-[#685a31] text-white px-4 py-3 placeholder:text-[#cbbc90]/50 focus:border-primary focus:ring-1 focus:ring-primary transition-colors outline-none resize-none" placeholder="Please provide details about the date, venue, and specific requirements..." rows="4"></textarea>
+</label>
+<div class="pt-2">
+<button class="w-full md:w-auto px-8 py-3 bg-primary text-background-dark font-bold text-base rounded-lg hover:bg-primary-hover transition-all transform hover:scale-[1.02] flex items-center justify-center gap-2" type="button">
+<span>Send Inquiry</span>
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Right Column: Contact Info Cards -->
+<div class="lg:col-span-5 space-y-6">
+<!-- Direct Contact Section -->
+<div class="flex flex-col gap-4">
+<h3 class="text-white text-xl font-bold tracking-tight">Direct Contact</h3>
+<!-- Management Card -->
+<div class="group flex items-start gap-4 p-5 rounded-xl border border-[#493f22] bg-card-dark hover:border-primary/50 transition-colors">
+<div class="flex-shrink-0 size-12 rounded-full bg-[#342d18] flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">person_celebrate</span>
+</div>
+<div>
+<h4 class="text-white font-bold text-base">Management</h4>
+<p class="text-text-muted text-sm mt-1">Rawal Talent Management</p>
+<p class="text-text-muted text-xs mt-0.5 opacity-70">Mon - Fri, 10am - 6pm IST</p>
+</div>
+</div>
+<!-- Email Card -->
+<a class="group flex items-start gap-4 p-5 rounded-xl border border-[#493f22] bg-card-dark hover:border-primary/50 transition-colors" href="mailto:management@surrenderrawal.com">
+<div class="flex-shrink-0 size-12 rounded-full bg-[#342d18] flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<h4 class="text-white font-bold text-base">Email</h4>
+<p class="text-text-muted text-sm mt-1 break-all">management@surrenderrawal.com</p>
+</div>
+</a>
+<!-- Phone Card -->
+<a class="group flex items-start gap-4 p-5 rounded-xl border border-[#493f22] bg-card-dark hover:border-primary/50 transition-colors" href="tel:+919876543210">
+<div class="flex-shrink-0 size-12 rounded-full bg-[#342d18] flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">call</span>
+</div>
+<div>
+<h4 class="text-white font-bold text-base">Phone</h4>
+<p class="text-text-muted text-sm mt-1">+91 98765 43210</p>
+</div>
+</a>
+</div>
+<!-- Separator -->
+<div class="h-px w-full bg-[#493f22] my-4"></div>
+<!-- Social Media Links -->
+<div>
+<h3 class="text-white text-xl font-bold tracking-tight mb-4">Follow &amp; Connect</h3>
+<div class="flex gap-4">
+<!-- Instagram -->
+<a class="flex-1 p-4 rounded-xl bg-[#342d18] border border-[#493f22] hover:border-primary/50 hover:bg-[#3e3520] transition-all flex flex-col items-center gap-2 group" href="#">
+<span class="text-white group-hover:text-primary transition-colors text-2xl font-bold">Ig</span>
+<span class="text-text-muted text-xs uppercase tracking-wider">Instagram</span>
+</a>
+<!-- Youtube -->
+<a class="flex-1 p-4 rounded-xl bg-[#342d18] border border-[#493f22] hover:border-primary/50 hover:bg-[#3e3520] transition-all flex flex-col items-center gap-2 group" href="#">
+<span class="text-white group-hover:text-primary transition-colors text-2xl font-bold">Yt</span>
+<span class="text-text-muted text-xs uppercase tracking-wider">YouTube</span>
+</a>
+<!-- Spotify -->
+<a class="flex-1 p-4 rounded-xl bg-[#342d18] border border-[#493f22] hover:border-primary/50 hover:bg-[#3e3520] transition-all flex flex-col items-center gap-2 group" href="#">
+<span class="text-white group-hover:text-primary transition-colors text-2xl font-bold">Sp</span>
+<span class="text-text-muted text-xs uppercase tracking-wider">Spotify</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="border-t border-[#493f22] bg-[#1a160c] pt-12 pb-8">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-3">
+<div class="size-6 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 4C12.95 4 4 12.95 4 24C4 35.05 12.95 44 24 44C35.05 44 44 35.05 44 24C44 12.95 35.05 4 24 4Z" fill="currentColor"></path>
+</svg>
+</div>
+<span class="text-white font-bold text-lg">Surrender Rawal</span>
+</div>
+<div class="flex gap-8 text-text-muted text-sm">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+</div>
+<p class="text-text-muted/60 text-sm">
+                    © 2024 Surrender Rawal. All rights reserved.
+                </p>
+</div>
+</div>
+</footer>
+</body></html>
