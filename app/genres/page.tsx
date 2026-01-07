@@ -24,7 +24,7 @@ export default function GenresPage() {
         "Authentic nazakat (delicacy) in rendition",
         "Perfect blend of melody and poetry",
       ],
-      image: "/ghazal-music-performance-soulful.jpg",
+      image: "/White-Kurta.png",
       color: "from-maroon-600 to-maroon-800",
     },
     {
@@ -39,7 +39,7 @@ export default function GenresPage() {
         "Traditional alap, jod, jhala progression",
         "Tarana and sargam improvisations",
       ],
-      image: "/indian-classical-music-raga-performance.jpg",
+      image: "/Classical.jpg",
       color: "from-gold-600 to-gold-700",
     },
     {
@@ -124,7 +124,7 @@ export default function GenresPage() {
             >
               {/* Image */}
               <div className={`relative ${index % 2 === 1 ? "lg:order-2" : ""}`}>
-                <div className="aspect-[4/3] relative rounded-lg overflow-hidden border border-border">
+                <div className="aspect-[3/3] relative rounded-lg overflow-hidden border border-border">
                   <Image
                     src={genre.image || "/placeholder.svg"}
                     alt={genre.title}

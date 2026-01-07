@@ -26,7 +26,7 @@ export default function Navigation() {
             <Music2 className="w-7 h-7" />
           </div>
           <h2 className="text-white text-xl font-serif font-bold tracking-wide group-hover:text-accent transition-colors">
-            Surrender Rawal
+            Surendra K. Rawal
           </h2>
         </Link>
 

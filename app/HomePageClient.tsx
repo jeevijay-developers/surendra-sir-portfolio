@@ -12,7 +12,7 @@ export default function HomePageClient() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-DanM-pjlXcGwTxbtBV-gmKVBX1t-EbHRgH2SjZDrYqK6VaLe7SaRtzaxz5Qs9mnWp5Oe90OdE5LJLnCR47jwdocPZxtYPA5V9X8FGoyFPP2rl2xd9ffB5lCwOEuaQ77Yl5kkYmkxjkWua2xYdXwUOZxh1XXLazAfZVa3xgkQWRDTLLF3PcZvhwymo25DLkSwnGlbiJAevfSxHHrqOKBWmwYxovhVIrkLU-QMxrF3CO-ZmAx01I5AWZxKqiElB9QF4gWRihMvIrhS"
+            src="/HeroSection.png"
             alt="Surrender Rawal performing live on a dimly lit stage with warm lighting"
             fill
             className="object-cover"
@@ -32,9 +32,15 @@ export default function HomePageClient() {
               Royal Indian Classical
             </span>
             <h1 className="text-white text-5xl md:text-7xl font-serif font-bold leading-tight tracking-tight drop-shadow-lg">
-              Surrender{" "}
+              Surendra{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-accent to-white pr-2">
+                K.
+              </span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-accent to-white">
                 Rawal
+              </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-accent to-white pl-2">
+                (Surr)
               </span>
             </h1>
             <h2 className="text-gray-200 text-lg md:text-2xl font-light tracking-wide max-w-2xl mx-auto">
@@ -67,23 +73,39 @@ export default function HomePageClient() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-x-0 md:divide-x divide-border">
             <div className="flex flex-col items-center gap-2 p-2 group">
               <Music2 className="text-accent w-10 h-10 mb-2 group-hover:scale-110 transition-transform" />
-              <p className="text-3xl md:text-4xl font-bold text-white font-serif">500+</p>
-              <p className="text-muted text-sm font-medium uppercase tracking-wider">Concerts</p>
+              <p className="text-3xl md:text-4xl font-bold text-white font-serif">
+                500+
+              </p>
+              <p className="text-muted text-sm font-medium uppercase tracking-wider">
+                Concerts
+              </p>
             </div>
             <div className="flex flex-col items-center gap-2 p-2 group">
               <Tv className="text-accent w-10 h-10 mb-2 group-hover:scale-110 transition-transform" />
-              <p className="text-3xl md:text-4xl font-bold text-white font-serif">50+</p>
-              <p className="text-muted text-sm font-medium uppercase tracking-wider">TV Shows</p>
+              <p className="text-3xl md:text-4xl font-bold text-white font-serif">
+                50+
+              </p>
+              <p className="text-muted text-sm font-medium uppercase tracking-wider">
+                TV Shows
+              </p>
             </div>
             <div className="flex flex-col items-center gap-2 p-2 group">
               <Trophy className="text-accent w-10 h-10 mb-2 group-hover:scale-110 transition-transform" />
-              <p className="text-3xl md:text-4xl font-bold text-white font-serif">12</p>
-              <p className="text-muted text-sm font-medium uppercase tracking-wider">Awards</p>
+              <p className="text-3xl md:text-4xl font-bold text-white font-serif">
+                12
+              </p>
+              <p className="text-muted text-sm font-medium uppercase tracking-wider">
+                Awards
+              </p>
             </div>
             <div className="flex flex-col items-center gap-2 p-2 group">
               <Clock className="text-accent w-10 h-10 mb-2 group-hover:scale-110 transition-transform" />
-              <p className="text-3xl md:text-4xl font-bold text-white font-serif">20+</p>
-              <p className="text-muted text-sm font-medium uppercase tracking-wider">Years Active</p>
+              <p className="text-3xl md:text-4xl font-bold text-white font-serif">
+                20+
+              </p>
+              <p className="text-muted text-sm font-medium uppercase tracking-wider">
+                Years Active
+              </p>
             </div>
           </div>
         </div>
@@ -94,8 +116,12 @@ export default function HomePageClient() {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="flex items-center justify-between mb-12">
             <div>
-              <h2 className="text-accent text-sm font-bold uppercase tracking-[0.2em] mb-2">Discography</h2>
-              <h3 className="text-white text-3xl md:text-4xl font-serif font-bold">Featured Compositions</h3>
+              <h2 className="text-accent text-sm font-bold uppercase tracking-[0.2em] mb-2">
+                Discography
+              </h2>
+              <h3 className="text-white text-3xl md:text-4xl font-serif font-bold">
+                Featured Compositions
+              </h3>
             </div>
           </div>
 
@@ -114,8 +140,12 @@ export default function HomePageClient() {
                   <Play className="w-6 h-6 fill-current" />
                 </button>
                 <div className="absolute bottom-6 left-24 right-6">
-                  <h4 className="text-white text-2xl font-serif font-bold truncate">Raag Malhar - Live Session</h4>
-                  <p className="text-gray-300 text-sm">Classical Fusion • 12:04</p>
+                  <h4 className="text-white text-2xl font-serif font-bold truncate">
+                    Raag Malhar - Live Session
+                  </h4>
+                  <p className="text-gray-300 text-sm">
+                    Classical Fusion • 12:04
+                  </p>
                 </div>
               </div>
 
@@ -124,17 +154,22 @@ export default function HomePageClient() {
                 <div className="flex items-center gap-3 text-xs text-muted font-mono mb-2">
                   <span>02:14</span>
                   <div className="flex-1 h-8 flex items-end gap-[2px] opacity-70">
-                    {[40, 70, 100, 60, 30, 50, 80, 90, 40, 20, 40, 70, 100, 60, 30, 50, 80, 90, 40, 20].map(
-                      (height, i) => (
-                        <div
-                          key={i}
-                          className={`w-1 bg-accent transition-all ${
-                            height === 100 ? "opacity-100" : height > 60 ? "opacity-60" : "opacity-40"
-                          } ${i === 2 || i === 12 ? "animate-pulse" : ""}`}
-                          style={{ height: `${height}%` }}
-                        />
-                      ),
-                    )}
+                    {[
+                      40, 70, 100, 60, 30, 50, 80, 90, 40, 20, 40, 70, 100, 60,
+                      30, 50, 80, 90, 40, 20,
+                    ].map((height, i) => (
+                      <div
+                        key={i}
+                        className={`w-1 bg-accent transition-all ${
+                          height === 100
+                            ? "opacity-100"
+                            : height > 60
+                            ? "opacity-60"
+                            : "opacity-40"
+                        } ${i === 2 || i === 12 ? "animate-pulse" : ""}`}
+                        style={{ height: `${height}%` }}
+                      />
+                    ))}
                   </div>
                   <span>12:04</span>
                 </div>
@@ -184,24 +219,33 @@ export default function HomePageClient() {
                 <button
                   key={index}
                   onClick={() => {
-                    console.log("[v0] Playing track:", track.title)
-                    alert(`Playing: ${track.title}`)
+                    console.log("[v0] Playing track:", track.title);
+                    alert(`Playing: ${track.title}`);
                   }}
                   className="flex items-center gap-4 p-3 rounded-lg hover:bg-foreground/5 transition-colors group cursor-pointer border border-transparent hover:border-accent/20 text-left w-full"
                 >
                   <div className="w-16 h-16 rounded-md shrink-0 relative overflow-hidden">
-                    <Image src={track.image || "/placeholder.svg"} alt={track.title} fill className="object-cover" />
+                    <Image
+                      src={track.image || "/placeholder.svg"}
+                      alt={track.title}
+                      fill
+                      className="object-cover"
+                    />
                     <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                       <Play className="w-5 h-5 text-white fill-current" />
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h5 className="text-white font-medium truncate">{track.title}</h5>
+                    <h5 className="text-white font-medium truncate">
+                      {track.title}
+                    </h5>
                     <p className="text-muted text-sm">
                       {track.genre} • {track.year}
                     </p>
                   </div>
-                  <div className="text-muted text-sm font-mono group-hover:text-accent">{track.duration}</div>
+                  <div className="text-muted text-sm font-mono group-hover:text-accent">
+                    {track.duration}
+                  </div>
                 </button>
               ))}
             </div>
@@ -220,8 +264,12 @@ export default function HomePageClient() {
       <section className="py-16 bg-surface/30">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-accent text-sm font-bold uppercase tracking-[0.2em] mb-3">Live Moments</h2>
-            <h3 className="text-white text-3xl md:text-4xl font-serif font-bold">Gallery & Events</h3>
+            <h2 className="text-accent text-sm font-bold uppercase tracking-[0.2em] mb-3">
+              Live Moments
+            </h2>
+            <h3 className="text-white text-3xl md:text-4xl font-serif font-bold">
+              Gallery & Events
+            </h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -251,7 +299,9 @@ export default function HomePageClient() {
             ].map((event, index) => (
               <div
                 key={index}
-                className={`group relative rounded-xl overflow-hidden aspect-[4/5] cursor-pointer ${event.offset || ""}`}
+                className={`group relative rounded-xl overflow-hidden aspect-[4/5] cursor-pointer ${
+                  event.offset || ""
+                }`}
               >
                 <Image
                   src={event.image || "/placeholder.svg"}
@@ -261,8 +311,12 @@ export default function HomePageClient() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80" />
                 <div className="absolute bottom-0 left-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform">
-                  <p className="text-accent text-xs font-bold uppercase mb-1">{event.location}</p>
-                  <h4 className="text-white text-xl font-bold font-serif">{event.title}</h4>
+                  <p className="text-accent text-xs font-bold uppercase mb-1">
+                    {event.location}
+                  </p>
+                  <h4 className="text-white text-xl font-bold font-serif">
+                    {event.title}
+                  </h4>
                 </div>
               </div>
             ))}
@@ -284,8 +338,12 @@ export default function HomePageClient() {
       <section className="py-20">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-accent text-sm font-bold uppercase tracking-[0.2em] mb-3">Testimonials</h2>
-            <h3 className="text-white text-3xl md:text-4xl font-serif font-bold">What Audiences Say</h3>
+            <h2 className="text-accent text-sm font-bold uppercase tracking-[0.2em] mb-3">
+              Testimonials
+            </h2>
+            <h3 className="text-white text-3xl md:text-4xl font-serif font-bold">
+              What Audiences Say
+            </h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -309,11 +367,18 @@ export default function HomePageClient() {
                 role: "Wedding Couple",
               },
             ].map((testimonial, index) => (
-              <div key={index} className="bg-surface p-8 rounded-lg border border-border">
+              <div
+                key={index}
+                className="bg-surface p-8 rounded-lg border border-border"
+              >
                 <div className="text-4xl text-accent mb-4 font-serif">"</div>
-                <p className="text-muted mb-6 leading-relaxed italic">{testimonial.quote}</p>
+                <p className="text-muted mb-6 leading-relaxed italic">
+                  {testimonial.quote}
+                </p>
                 <div>
-                  <div className="font-semibold text-foreground">{testimonial.author}</div>
+                  <div className="font-semibold text-foreground">
+                    {testimonial.author}
+                  </div>
                   <div className="text-sm text-muted">{testimonial.role}</div>
                 </div>
               </div>
@@ -325,10 +390,12 @@ export default function HomePageClient() {
       {/* CTA Section */}
       <section className="py-24 bg-surface/30">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-4xl sm:text-5xl font-serif font-bold text-white mb-6">Let's create magic together</h2>
+          <h2 className="text-4xl sm:text-5xl font-serif font-bold text-white mb-6">
+            Let's create magic together
+          </h2>
           <p className="text-muted max-w-xl mx-auto mb-8 text-lg">
-            Available for concerts, private events, weddings, and corporate shows. Bringing the royal essence of music
-            to your stage.
+            Available for concerts, private events, weddings, and corporate
+            shows. Bringing the royal essence of music to your stage.
           </p>
           <Link
             href="/contact"
@@ -340,5 +407,5 @@ export default function HomePageClient() {
         </div>
       </section>
     </>
-  )
+  );
 }

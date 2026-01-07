@@ -24,7 +24,7 @@ export default function AboutPage() {
               <span className="text-sm text-muted tracking-wider uppercase">The Artist</span>
             </div>
             <h1 className="text-5xl sm:text-6xl font-serif font-bold text-foreground text-balance">
-              About <span className="text-accent">Surrender Rawal</span>
+              About <span className="text-accent">Surendra K. Rawal</span>
             </h1>
             <p className="text-xl text-muted max-w-3xl mx-auto text-pretty">
               A journey through melody, tradition, and the pursuit of musical excellence
@@ -40,7 +40,7 @@ export default function AboutPage() {
             <div className="relative">
               <div className="aspect-[3/4] relative rounded-lg overflow-hidden border border-border">
                 <Image
-                  src="/indian-classical-singer-portrait.jpg"
+                  src="/About_SR.png"
                   alt="Surrender Rawal"
                   width={600}
                   height={800}
@@ -56,12 +56,12 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-muted leading-relaxed">
                 <p>
-                  Surrender Rawal is a distinguished vocalist who has dedicated his life to the preservation and
+                  Surendra K. Rawal is a distinguished vocalist who has dedicated his life to the preservation and
                   performance of Indian classical music. With over 15 years of experience, he has become a celebrated
                   name in the world of Ghazals, Classical, Semi-Classical, Sufi, and Bollywood music.
                 </p>
                 <p>
-                  Born into a family of music lovers, Surrender began his training at the age of 7 under the tutelage of
+                  Born into a family of music lovers, Surendra began his training at the age of 7 under the tutelage of
                   renowned classical maestros. His rigorous training in Hindustani classical music laid the foundation
                   for his versatile musical journey.
                 </p>

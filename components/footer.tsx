@@ -30,7 +30,7 @@ export default function Footer() {
               <div className="w-6 h-6 text-accent flex items-center justify-center">
                 <Music2 className="w-5 h-5" />
               </div>
-              <span className="font-serif font-bold text-lg">Surrender Rawal</span>
+              <span className="font-serif font-bold text-lg">Surendra K. Rawal</span>
             </div>
             <p className="text-muted text-sm leading-relaxed">
               Keeping the tradition of Indian classical music alive with a modern soul.
@@ -91,7 +91,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="mt-12 text-center text-muted/60 text-xs">
-          &copy; {currentYear} Surrender Rawal. All rights reserved.
+          &copy; {currentYear} Surendra K. Rawal. All rights reserved.
         </div>
       </div>
     </footer>
