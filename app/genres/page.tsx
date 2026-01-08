@@ -54,7 +54,7 @@ export default function GenresPage() {
         "Seasonal and devotional songs",
         "Regional semi-classical traditions",
       ],
-      image: "/thumri-semi-classical-music.jpg",
+      image: "/RedKurta.jpg",
       color: "from-maroon-700 to-gold-600",
     },
     {
@@ -69,7 +69,7 @@ export default function GenresPage() {
         "Mystical and devotional themes",
         "Spiritual atmosphere creation",
       ],
-      image: "/sufi-qawwali-music-spiritual.jpg",
+      image: "/BlueKurta.jpg",
       color: "from-gold-500 to-maroon-600",
     },
     {
@@ -84,7 +84,7 @@ export default function GenresPage() {
         "Classical interpretation of popular songs",
         "Medleys and mashups",
       ],
-      image: "/bollywood-music-singer-performance.jpg",
+      image: "/.jpg",
       color: "from-maroon-800 to-gold-500",
     },
   ]
