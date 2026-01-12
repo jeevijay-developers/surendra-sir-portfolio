@@ -59,7 +59,7 @@ export default function Footer() {
             <h4 className="text-white font-bold mb-2">Connect</h4>
             <div className="flex gap-4">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/share/1D4NQDp58r/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-foreground/5 hover:bg-accent hover:text-background flex items-center justify-center text-white transition-all"
@@ -68,7 +68,7 @@ export default function Footer() {
                 <Facebook className="w-5 h-5" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/surendra_rawal_sur?igsh=MWZudXE4eXRsN3U5eQ=="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-foreground/5 hover:bg-accent hover:text-background flex items-center justify-center text-white transition-all"
@@ -77,7 +77,7 @@ export default function Footer() {
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="https://youtube.com"
+                href="https://youtube.com/@surendrarawal1333?si=iMyikqQ6soWXoWr3"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-foreground/5 hover:bg-accent hover:text-background flex items-center justify-center text-white transition-all"
