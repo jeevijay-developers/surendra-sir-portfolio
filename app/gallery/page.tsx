@@ -7,59 +7,59 @@ import { Play, ImageIcon } from "lucide-react"
 const galleryItems = [
   {
     type: "image",
-    src: "/ghazal-concert-performance-on-stage-with-warm-ligh.jpg",
+    src: "/Surr_Gal-Gazal.png",
     title: "Ghazal Night at Mumbai",
     category: "ghazal",
   },
   {
     type: "image",
-    src: "/classical-music-festival-stage-performance-with-tr.jpg",
+    src: "/Surr_Gal-Classical.png",
     title: "Classical Music Festival",
     category: "classical",
   },
   {
     type: "image",
-    src: "/sufi-qawwali-evening-performance-with-spiritual-at.jpg",
+    src: "/Surr_Gal-sufi-1.png",
     title: "Sufi Qawwali Evening",
     category: "sufi",
   },
   {
     type: "image",
-    src: "/elegant-wedding-singer-performance-at-private-even.jpg",
+    src: "/Surr_Gal-Private.png",
     title: "Private Wedding Performance",
     category: "private",
   },
   {
     type: "image",
-    src: "/bollywood-melodies-concert-with-colorful-stage-lig.jpg",
+    src: "/Surr_Gal-Bolly-1.png",
     title: "Bollywood Melodies Concert",
     category: "bollywood",
   },
   {
     type: "image",
-    src: "/classical-raga-performance-with-traditional-indian.jpg",
+    src: "/Surr_Gal-Classical-1.png",
     title: "Raga Performance",
     category: "classical",
   },
   {
     type: "image",
-    src: "/intimate-ghazal-music-session-with-acoustic-setup.jpg",
+    src: "/Surr_Gal-Sufi.png",
     title: "Intimate Ghazal Session",
     category: "ghazal",
   },
   {
     type: "image",
-    src: "/sufi-music-gathering-with-devotional-atmosphere.jpg",
+    src: "/Surr_Gal-Sufi.png",
     title: "Sufi Music Gathering",
     category: "sufi",
   },
   {
     type: "image",
-    src: "/corporate-event-live-music-performance.jpg",
+    src: "/Surr_Gal-Private-1.png",
     title: "Corporate Event Performance",
     category: "private",
   },
-]
+];
 
 const categories = [
   { id: "all", label: "All" },
