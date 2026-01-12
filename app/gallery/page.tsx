@@ -7,55 +7,55 @@ import { Play, ImageIcon } from "lucide-react"
 const galleryItems = [
   {
     type: "image",
-    src: "/Surr_Gal-Gazal.png",
+    src: "/Surr_Gal-Gazal.jpg",
     title: "Ghazal Night at Mumbai",
     category: "ghazal",
   },
   {
     type: "image",
-    src: "/Surr_Gal-Classical.png",
+    src: "/Surr_Gal-Classical.jpg",
     title: "Classical Music Festival",
     category: "classical",
   },
   {
     type: "image",
-    src: "/Surr_Gal-sufi-1.png",
+    src: "/Surr_Gal-sufi-1.jpg",
     title: "Sufi Qawwali Evening",
     category: "sufi",
   },
   {
     type: "image",
-    src: "/Surr_Gal-Private.png",
+    src: "/Surr_Gal-Private.jpg",
     title: "Private Wedding Performance",
     category: "private",
   },
   {
     type: "image",
-    src: "/Surr_Gal-Bolly-1.png",
+    src: "/Surr_Gal-Bolly-1.jpg",
     title: "Bollywood Melodies Concert",
     category: "bollywood",
   },
   {
     type: "image",
-    src: "/Surr_Gal-Classical-1.png",
+    src: "/Surr_Gal-Classical-1.jpg",
     title: "Raga Performance",
     category: "classical",
   },
   {
     type: "image",
-    src: "/Surr_Gal-Sufi.png",
+    src: "/Surr_Gal-Gazal-1.jpg",
     title: "Intimate Ghazal Session",
     category: "ghazal",
   },
   {
     type: "image",
-    src: "/Surr_Gal-Sufi.png",
+    src: "/Surr_Gal-Sufi.jpg",
     title: "Sufi Music Gathering",
     category: "sufi",
   },
   {
     type: "image",
-    src: "/Surr_Gal-Private-1.png",
+    src: "/Surr_Gal-Private-1.jpg",
     title: "Corporate Event Performance",
     category: "private",
   },
@@ -87,7 +87,9 @@ export default function GalleryPage() {
           <div className="text-center space-y-6">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-surface-elevated/50 backdrop-blur-sm rounded-full border border-accent/20">
               <ImageIcon size={16} className="text-accent" />
-              <span className="text-sm text-muted tracking-wider uppercase">Visual Journey</span>
+              <span className="text-sm text-muted tracking-wider uppercase">
+                Visual Journey
+              </span>
             </div>
             <h1 className="text-5xl sm:text-6xl font-serif font-bold text-foreground text-balance">
               Gallery & <span className="text-accent">Performances</span>
@@ -138,7 +140,9 @@ export default function GalleryPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <h3 className="text-lg font-serif font-bold text-foreground mb-1">{item.title}</h3>
+                    <h3 className="text-lg font-serif font-bold text-foreground mb-1">
+                      {item.title}
+                    </h3>
                     <div className="text-sm text-accent uppercase tracking-wide">
                       {categories.find((c) => c.id === item.category)?.label}
                     </div>
@@ -164,43 +168,41 @@ export default function GalleryPage() {
             <h2 className="text-4xl font-serif font-bold text-foreground mb-4">
               Featured <span className="text-accent">Performances</span>
             </h2>
-            <p className="text-lg text-muted max-w-2xl mx-auto">Watch highlights from recent concerts and events</p>
+            <p className="text-lg text-muted max-w-2xl mx-auto">
+              Watch highlights from recent concerts and events
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               {
                 title: "Classical Raga Performance",
-                description: "Full raga elaboration at National Music Festival 2023",
-                thumbnail: "/classical-raga-performance-on-stage.jpg",
+                description:
+                  "Full raga elaboration at National Music Festival 2023",
+                youtubeId: "cLQ5EVun57U",
               },
               {
                 title: "Ghazal Medley",
-                description: "Collection of timeless ghazals from Mumbai concert",
-                thumbnail: "/ghazal-singer-performing-with-microphone.jpg",
+                description:
+                  "Collection of timeless ghazals from Mumbai concert",
+                youtubeId: "C9mf6rJE0_c",
               },
             ].map((video, index) => (
-              <div
-                key={index}
-                className="group relative aspect-video rounded-lg overflow-hidden border border-border hover:border-accent/50 transition-all cursor-pointer"
-              >
-                <Image
-                  src={video.thumbnail || "/placeholder.svg"}
-                  alt={video.title}
-                  width={600}
-                  height={400}
-                  className="object-cover w-full h-full"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent">
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <h3 className="text-xl font-serif font-bold text-foreground mb-1">{video.title}</h3>
-                    <p className="text-sm text-muted">{video.description}</p>
-                  </div>
+              <div key={index} className="space-y-4">
+                <div className="relative aspect-video rounded-lg overflow-hidden border border-border hover:border-accent/50 transition-all">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${video.youtubeId}`}
+                    title={video.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full"
+                  />
                 </div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-20 h-20 rounded-full bg-accent/90 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Play size={32} className="text-background ml-1" />
-                  </div>
+                <div>
+                  <h3 className="text-xl font-serif font-bold text-foreground mb-1">
+                    {video.title}
+                  </h3>
+                  <p className="text-sm text-muted">{video.description}</p>
                 </div>
               </div>
             ))}
@@ -208,5 +210,5 @@ export default function GalleryPage() {
         </div>
       </section>
     </>
-  )
+  );
 }

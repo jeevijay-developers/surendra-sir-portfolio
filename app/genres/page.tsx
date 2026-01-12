@@ -84,10 +84,10 @@ export default function GenresPage() {
         "Classical interpretation of popular songs",
         "Medleys and mashups",
       ],
-      image: "/.jpg",
+      image: "/Surr_Gal-Bolly-1.jpg",
       color: "from-maroon-800 to-gold-500",
     },
-  ]
+  ];
 
   return (
     <>
