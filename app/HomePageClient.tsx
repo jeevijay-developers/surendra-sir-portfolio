@@ -277,23 +277,20 @@ export default function HomePageClient() {
               {
                 title: "International Tour 2023",
                 location: "Dubai Opera House",
-                image:
-                  "https://lh3.googleusercontent.com/aida-public/AB6AXuAlMb1ShGI1RIsV7w0KJ8_gHzHDElV_6s-37vKN5OmrmmtQ9WwIkpY9TtEF1yegLpmAqVHH_EM5L_BlHM2Z3MgmtLgOTgOakaBYh_ceB6N5lTZ8cPKmgipWR5CKHh74AHlUlbUxsWLX93HO93eZUgTFE1aWYmHFF8jVenHea45pfY8WnuKse9N4MLKnEba1puMTz0wgYl0UI7ErhtEL0FFQg39jMJyeumo6PaUqvTD2cPz1yhWfF1rzXYcX9nB1gceoc2Xg-1kcGoHQ",
+                image: "/Surr_Gal-Bolly-1.jpg",
                 alt: "Concert crowd silhouette with stage lights",
               },
               {
                 title: "Jashn-e-Rekhta",
                 location: "Mumbai",
-                image:
-                  "https://lh3.googleusercontent.com/aida-public/AB6AXuA1skcWzmQL9is3Lp4wkJkbLT-On4H4StMRqhHCyMXlbdNZJFS6n1ofF1nq8pbVkvAB1yyyLgS7Jkrs6nvd5vi3c9GgFgTQ2HlG1cuXbRhJpRxv2Y2Fbhaf8dC2UkAl_XLVPIXjJotl5Bfl_xA5rl1vrvSiJ7Nrj-dwzq6TsbSRlS4dRQAHVCqh_HmzbnbqKbtQdubcbQTUEF6XT2aYmnGNWYfgCSsf-_WJ2TdyMTLSBQL-OZ6c49vsn_WNBG1hINNVD8qnGRmdUrvq",
+                image: "/Surr_Gal-sufi-1.jpg",
                 alt: "Artist sitting on stage singing into microphone",
                 offset: "md:-mt-8",
               },
               {
                 title: "Classical Evening",
                 location: "NCPA, Delhi",
-                image:
-                  "https://lh3.googleusercontent.com/aida-public/AB6AXuDHgG9AeWxKcK5rFkVX_0y0w2UBWKcNtPGT3QcBIQE5MQ9c0gXOxVHZ4g2jDxiQJHHKpLHpNQHHGcpQx5jGcHpcB5cGBKHDQQ",
+                image: "/Surr_Gal-classical-1.jpg",
                 alt: "Close up of hands playing musical instrument",
               },
             ].map((event, index) => (
