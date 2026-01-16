@@ -2,7 +2,7 @@
 
 import type React from "react"
 import { useState } from "react"
-import { Mail, Phone, MapPin, Calendar, Send } from "lucide-react"
+import { Mail, Phone, MapPin, Calendar, Send, ChevronDown } from "lucide-react"
 
 export default function ContactClientPage() {
   const [formData, setFormData] = useState({
@@ -13,6 +13,11 @@ export default function ContactClientPage() {
     eventDate: "",
     message: "",
   })
+  const [openFaq, setOpenFaq] = useState<number | null>(null)
+
+  const toggleFaq = (index: number) => {
+    setOpenFaq(openFaq === index ? null : index)
+  }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -255,7 +260,7 @@ export default function ContactClientPage() {
             <p className="text-lg text-muted">Everything you need to know about booking a performance</p>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-4">
             {[
               {
                 question: "What types of events do you perform at?",
@@ -283,9 +288,30 @@ export default function ContactClientPage() {
                   "I typically need a sound system, microphones, and proper lighting. For larger events, we can coordinate with your technical team to ensure the best setup.",
               },
             ].map((faq, index) => (
-              <div key={index} className="bg-surface-elevated p-6 rounded-lg border border-border">
-                <h3 className="text-lg font-semibold text-foreground mb-2">{faq.question}</h3>
-                <p className="text-muted leading-relaxed">{faq.answer}</p>
+              <div 
+                key={index} 
+                className="bg-surface-elevated rounded-lg border border-border overflow-hidden transition-all duration-300"
+              >
+                <button
+                  onClick={() => toggleFaq(index)}
+                  className="w-full flex items-center justify-between p-6 text-left hover:bg-foreground/5 transition-colors"
+                >
+                  <h3 className="text-lg font-semibold text-foreground pr-4">{faq.question}</h3>
+                  <ChevronDown 
+                    className={`w-5 h-5 text-accent flex-shrink-0 transition-transform duration-300 ${
+                      openFaq === index ? 'rotate-180' : ''
+                    }`} 
+                  />
+                </button>
+                <div 
+                  className={`grid transition-all duration-300 ease-in-out ${
+                    openFaq === index ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <p className="px-6 pb-6 text-muted leading-relaxed">{faq.answer}</p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
