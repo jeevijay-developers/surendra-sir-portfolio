@@ -118,7 +118,7 @@ export default function ContactClientPage() {
                       className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-background font-semibold rounded-md hover:bg-gold-400 transition-colors"
                     >
                       <Calendar size={18} />
-                      Schedule on Cal.com
+                      Schedule on Calender
                     </a>
                   </div>
                 </div>

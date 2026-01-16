@@ -93,7 +93,7 @@ export default function AboutPage() {
               <h2 className="text-4xl font-serif font-bold text-foreground">
                 The Voice of <span className="text-accent">Tradition</span>
               </h2>
-              <div className="space-y-4 text-muted leading-relaxed">
+              <div className="space-y-4 text-muted leading-relaxed text-white">
                 <p>
                   Surendra Rawal refined his artistry through performances and
                   training associated with the Gwalior Gharana and Jaipur
@@ -104,10 +104,13 @@ export default function AboutPage() {
                 </p>
                 <p>
                   Over the years, he has had the privilege of performing
-                  alongside renowned artists such as Usha Mangeshkar, Anoop
-                  Jalota, Pankaj Udhas, Hariharan, Rekha Bhardwaj, and Suresh
-                  Wadekar, gaining valuable exposure to diverse musical styles
-                  and professional performance environments.
+                  alongside renowned artists such as{" "}
+                  <span className="text-accent font-bold">
+                    Usha Mangeshkar, Anoop Jalota, Pankaj Udhas, Hariharan
+                    Anantha Subramani , Rekha Bhardwaj, and Suresh Wadekar,{" "}
+                  </span>
+                  gaining valuable exposure to diverse musical styles and
+                  professional performance environments.
                 </p>
                 <p>
                   In 2009, he further showcased his talent by reaching the
@@ -275,7 +278,6 @@ export default function AboutPage() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6">
-           
             <h1 className="text-5xl sm:text-6xl font-serif font-bold text-foreground text-balance">
               Achievements <span className="text-accent">Awards</span>
             </h1>

@@ -1,10 +1,128 @@
 "use client"
 
+import { useRef, useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Music2, Tv, Trophy, Clock, ArrowRight, PlayCircle, Calendar, Play } from "lucide-react"
+import { Music2, Tv, Trophy, Clock, ArrowRight, PlayCircle, Calendar, Play, Pause } from "lucide-react"
+
+// Track data moved outside component for reuse
+const tracks = [
+  {
+    title: "Aaja Re",
+    genre: "Ghazal",
+    year: "2025",
+    duration: "02:53",
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuBSRW1F8RgEA4mO1LoTXZ2cZMdFkltG8K0Z3clGKWuDvaRPZKxRvFrkXjVg9NQLlWbyvPXcRORrAi0ihItuRea9TIMQBGI_rG0wxXtutKEb-g52dCT8xqlxIYfiVTQpcaOoOcpDruJAzjIYw1qOOyeb1CznUMngOoRG1p1E-eZ0C-qmxD7ebDXy73ZLKhNziCXPWP-N20ExgElmfRQbdGJiSuUlIu4i7bzt2PCbimXFr0BDyC4v5rBzKiQicLVRBL0RH2l1784TSU-V",
+    audioUrl: "/audio/Aaja_Re.mp3",
+  },
+  {
+    title: "Namami Gange",
+    genre: "Sufi",
+    year: "2025",
+    duration: "04:14",
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuCJMfx3O1uRJNsKPPjigg7-FQOv915ZQ7DThgvqb1dmi-IvhLykN0YfPyA86-maXx9vrbH6XJOBrUoDG1Ecw61EDw_f6rM0DgEjjJWFKkJpZd_TEmyNdnSUav7alJh3SslROgdRdKG_AkMUkh3QFYwoGGycZMcqkDNFrigH013evLRq2W1_P-zMdFlw7V7DKTt2GOA29x33CaxtoQ1vcZB0ClfwRwk50D0mLn39WFLGLdxy1txNpP7HCMXyOV0SnE-l_1gYAhOcKl3L",
+    audioUrl: "/audio/Gangae.mp3",
+  },
+  {
+    title: "Harjai",
+    genre: "Classical",
+    year: "2025",
+    duration: "04:22",
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuAInmyksHO8_q0cieEkn_nwxKaELhjQv4nGWXsvd-Gkl4LJgJSKmi4vaDEb2j4XCEZGn2-moity_8A-Wg1GaDpDXf37ENovOqE_w9HimKqgtkkqixl3S56eRXRFC9USHyAAOFU-U8KoQcz7hM9laXrxgyApKO80qy1hTN236xCls5n3RMvRaRIpB3IonKlYz9p89YjxAkSPW8D6y_WmabXrAV72THvLm8PLLjdbT3Yk4dfvFoCxH5mgFVhhGcPl9b5pjMVUQFHVh4YH",
+    audioUrl: "/audio/Harjai.mp3",
+  },
+]
+
+interface TrackInfo {
+  title: string
+  genre: string
+  year: string
+  duration: string
+  image: string
+  audioUrl: string
+}
 
 export default function HomePageClient() {
+  const audioRef = useRef<HTMLAudioElement | null>(null)
+  const [currentTrack, setCurrentTrack] = useState<string | null>(null)
+  const [currentTrackInfo, setCurrentTrackInfo] = useState<TrackInfo | null>(null)
+  const [isPlaying, setIsPlaying] = useState(false)
+  const [currentTime, setCurrentTime] = useState(0)
+  const [duration, setDuration] = useState(0)
+
+  // Format time in mm:ss
+  const formatTime = (time: number) => {
+    const minutes = Math.floor(time / 60)
+    const seconds = Math.floor(time % 60)
+    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
+  }
+
+  const playTrack = (track: TrackInfo) => {
+    // If same track is clicked, toggle play/pause
+    if (currentTrack === track.audioUrl && audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause()
+        setIsPlaying(false)
+      } else {
+        audioRef.current.play()
+        setIsPlaying(true)
+      }
+      return
+    }
+
+    // Stop current audio if playing
+    if (audioRef.current) {
+      audioRef.current.pause()
+    }
+
+    // Create new audio and play
+    const audio = new Audio(track.audioUrl)
+    audioRef.current = audio
+    setCurrentTrack(track.audioUrl)
+    setCurrentTrackInfo(track)
+    
+    audio.onloadedmetadata = () => {
+      setDuration(audio.duration)
+    }
+
+    audio.ontimeupdate = () => {
+      setCurrentTime(audio.currentTime)
+    }
+
+    audio.play()
+      .then(() => {
+        setIsPlaying(true)
+      })
+      .catch((error) => {
+        console.error("Error playing audio:", error)
+        alert(`Unable to play "${track.title}". The audio file may not be available.`)
+        setIsPlaying(false)
+      })
+
+    audio.onended = () => {
+      setIsPlaying(false)
+      setCurrentTrack(null)
+      setCurrentTrackInfo(null)
+      setCurrentTime(0)
+    }
+  }
+
+  // Handle play/pause from visualizer
+  const togglePlayFromVisualizer = () => {
+    if (audioRef.current && currentTrackInfo) {
+      if (isPlaying) {
+        audioRef.current.pause()
+        setIsPlaying(false)
+      } else {
+        audioRef.current.play()
+        setIsPlaying(true)
+      }
+    }
+  }
+
   return (
     <>
       {/* Hero Section */}
@@ -126,25 +244,33 @@ export default function HomePageClient() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            {/* Main Feature */}
+            {/* Main Feature - Now Playing Visualizer */}
             <div className="lg:col-span-7 bg-surface border border-border rounded-xl overflow-hidden shadow-lg group">
               <div className="relative h-64 sm:h-80 w-full overflow-hidden">
                 <Image
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBufjLtYwrhx9LmMJ-GM-EzsYT8lE1nguw2M4HjCCLX4wUvD5g0VzjRZBxBRc8wx347laRnIb6Z3KLm2nvWNl7LqVSDw7wVRKp9iqNGbycoY0HvD8ZkqUjseQ8kD12i8t4BC9qtQN-J6wsKdRm-CNhZV-j_cDNOdGUnfePU6m_3NMfodVE2BdDSFSjodr1VOCaQzHbcRbYc4RkGG4AUQwFZkWWxe-ISYa7EP8WxQFf-tjsKwvPlAVCW9MDzu8DB9E8xyqpe8g9Khn_"
-                  alt="Close up of a microphone with blurred stage lights in the background"
+                  src={currentTrackInfo?.image || "https://lh3.googleusercontent.com/aida-public/AB6AXuDBufjLtYwrhx9LmMJ-GM-EzsYT8lE1nguw2M4HjCCLX4wUvD5g0VzjRZBxBRc8wx347laRnIb6Z3KLm2nvWNl7LqVSDw7wVRKp9iqNGbycoY0HvD8ZkqUjseQ8kD12i8t4BC9qtQN-J6wsKdRm-CNhZV-j_cDNOdGUnfePU6m_3NMfodVE2BdDSFSjodr1VOCaQzHbcRbYc4RkGG4AUQwFZkWWxe-ISYa7EP8WxQFf-tjsKwvPlAVCW9MDzu8DB9E8xyqpe8g9Khn_"}
+                  alt={currentTrackInfo?.title || "Select a track to play"}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" />
-                <button className="absolute bottom-6 left-6 w-14 h-14 rounded-full bg-accent text-background flex items-center justify-center hover:bg-gold-400 transition-colors shadow-lg hover:scale-110 duration-300">
-                  <Play className="w-6 h-6 fill-current" />
+                <button 
+                  onClick={togglePlayFromVisualizer}
+                  disabled={!currentTrackInfo}
+                  className={`absolute bottom-6 left-6 w-14 h-14 rounded-full bg-accent text-background flex items-center justify-center hover:bg-gold-400 transition-colors shadow-lg hover:scale-110 duration-300 ${!currentTrackInfo ? 'opacity-50 cursor-not-allowed' : ''}`}
+                >
+                  {isPlaying ? (
+                    <Pause className="w-6 h-6 fill-current" />
+                  ) : (
+                    <Play className="w-6 h-6 fill-current" />
+                  )}
                 </button>
                 <div className="absolute bottom-6 left-24 right-6">
                   <h4 className="text-white text-2xl font-serif font-bold truncate">
-                    Raag Malhar - Live Session
+                    {currentTrackInfo?.title || "Select a track to play"}
                   </h4>
                   <p className="text-gray-300 text-sm">
-                    Classical Fusion • 12:04
+                    {currentTrackInfo ? `${currentTrackInfo.genre} • ${currentTrackInfo.duration}` : "Choose from the playlist"}
                   </p>
                 </div>
               </div>
@@ -152,77 +278,52 @@ export default function HomePageClient() {
               {/* Audio Wave Visualizer */}
               <div className="p-6 bg-surface-elevated">
                 <div className="flex items-center gap-3 text-xs text-muted font-mono mb-2">
-                  <span>02:14</span>
-                  <div className="flex-1 h-8 flex items-end gap-[2px] opacity-70">
+                  <span>{formatTime(currentTime)}</span>
+                  <div className="flex-1 h-8 flex items-end gap-[2px]">
                     {[
                       40, 70, 100, 60, 30, 50, 80, 90, 40, 20, 40, 70, 100, 60,
-                      30, 50, 80, 90, 40, 20,
+                      30, 50, 80, 90, 40, 20, 60, 75, 45, 85, 35, 55, 95, 65, 25, 70,
                     ].map((height, i) => (
                       <div
                         key={i}
-                        className={`w-1 bg-accent transition-all ${
+                        className={`w-1 bg-accent transition-all duration-150 ${
+                          isPlaying 
+                            ? 'animate-[wave_0.5s_ease-in-out_infinite]'
+                            : ''
+                        } ${
                           height === 100
                             ? "opacity-100"
                             : height > 60
-                            ? "opacity-60"
+                            ? "opacity-70"
                             : "opacity-40"
-                        } ${i === 2 || i === 12 ? "animate-pulse" : ""}`}
-                        style={{ height: `${height}%` }}
+                        }`}
+                        style={{ 
+                          height: isPlaying ? `${Math.random() * 60 + 40}%` : `${height}%`,
+                          animationDelay: `${i * 0.05}s`,
+                          opacity: currentTrackInfo ? undefined : 0.3
+                        }}
                       />
                     ))}
                   </div>
-                  <span>12:04</span>
+                  <span>{currentTrackInfo ? formatTime(duration) : "00:00"}</span>
+                </div>
+                {/* Progress bar */}
+                <div className="w-full h-1 bg-border rounded-full overflow-hidden mt-2">
+                  <div 
+                    className="h-full bg-accent transition-all duration-300"
+                    style={{ width: duration > 0 ? `${(currentTime / duration) * 100}%` : '0%' }}
+                  />
                 </div>
               </div>
             </div>
 
             {/* List Features */}
             <div className="lg:col-span-5 flex flex-col gap-4">
-              {[
-                {
-                  title: "Shaam-e-Ghazal",
-                  genre: "Ghazal",
-                  year: "2023",
-                  duration: "05:32",
-                  image:
-                    "https://lh3.googleusercontent.com/aida-public/AB6AXuBSRW1F8RgEA4mO1LoTXZ2cZMdFkltG8K0Z3clGKWuDvaRPZKxRvFrkXjVg9NQLlWbyvPXcRORrAi0ihItuRea9TIMQBGI_rG0wxXtutKEb-g52dCT8xqlxIYfiVTQpcaOoOcpDruJAzjIYw1qOOyeb1CznUMngOoRG1p1E-eZ0C-qmxD7ebDXy73ZLKhNziCXPWP-N20ExgElmfRQbdGJiSuUlIu4i7bzt2PCbimXFr0BDyC4v5rBzKiQicLVRBL0RH2l1784TSU-V",
-                  audioUrl: "/audio/shaam-e-ghazal.mp3",
-                },
-                {
-                  title: "Sufi Soul Journey",
-                  genre: "Sufi",
-                  year: "2022",
-                  duration: "08:15",
-                  image:
-                    "https://lh3.googleusercontent.com/aida-public/AB6AXuCJMfx3O1uRJNsKPPjigg7-FQOv915ZQ7DThgvqb1dmi-IvhLykN0YfPyA86-maXx9vrbH6XJOBrUoDG1Ecw61EDw_f6rM0DgEjjJWFKkJpZd_TEmyNdnSUav7alJh3SslROgdRdKG_AkMUkh3QFYwoGGycZMcqkDNFrigH013evLRq2W1_P-zMdFlw7V7DKTt2GOA29x33CaxtoQ1vcZB0ClfwRwk50D0mLn39WFLGLdxy1txNpP7HCMXyOV0SnE-l_1gYAhOcKl3L",
-                  audioUrl: "/audio/sufi-soul-journey.mp3",
-                },
-                {
-                  title: "Midnight Raga",
-                  genre: "Classical",
-                  year: "2021",
-                  duration: "15:00",
-                  image:
-                    "https://lh3.googleusercontent.com/aida-public/AB6AXuAInmyksHO8_q0cieEkn_nwxKaELhjQv4nGWXsvd-Gkl4LJgJSKmi4vaDEb2j4XCEZGn2-moity_8A-Wg1GaDpDXf37ENovOqE_w9HimKqgtkkqixl3S56eRXRFC9USHyAAOFU-U8KoQcz7hM9laXrxgyApKO80qy1hTN236xCls5n3RMvRaRIpB3IonKlYz9p89YjxAkSPW8D6y_WmabXrAV72THvLm8PLLjdbT3Yk4dfvFoCxH5mgFVhhGcPl9b5pjMVUQFHVh4YH",
-                  audioUrl: "/audio/midnight-raga.mp3",
-                },
-                {
-                  title: "Bollywood Classics Reimagined",
-                  genre: "Bollywood",
-                  year: "2024",
-                  duration: "04:45",
-                  image:
-                    "https://lh3.googleusercontent.com/aida-public/AB6AXuDYexm1voL8wM02BpGi19NQm0aTnBWfF_EjqFFlseX5IORKGApmSd7zf3cGBnw7LX3dUWU0LoZ6NMGVHECFlXMwQRwyNWDQBh8zwmkl3OAMQyBhfJLhHr41r6XYJ4rtF_qblL5EhEr2ru_cA_wdOC7wqYAtqiXSHg3mUkY9JdS54b01EtJZvOkfGmayd7KbZygpWCICvez2Z4Sm9Wz5XdAas2mQEWWQ4Kmwo0USW5U5bI6PwSsAezySq3VFqNWOBj2eMWJet9Vp5J03",
-                  audioUrl: "/audio/bollywood-classics.mp3",
-                },
-              ].map((track, index) => (
+              {tracks.map((track, index) => (
                 <button
                   key={index}
-                  onClick={() => {
-                    console.log("[v0] Playing track:", track.title);
-                    alert(`Playing: ${track.title}`);
-                  }}
-                  className="flex items-center gap-4 p-3 rounded-lg hover:bg-foreground/5 transition-colors group cursor-pointer border border-transparent hover:border-accent/20 text-left w-full"
+                  onClick={() => playTrack(track)}
+                  className={`flex items-center gap-4 p-3 rounded-lg hover:bg-foreground/5 transition-colors group cursor-pointer border text-left w-full ${currentTrack === track.audioUrl ? 'border-accent/50 bg-accent/5' : 'border-transparent hover:border-accent/20'}`}
                 >
                   <div className="w-16 h-16 rounded-md shrink-0 relative overflow-hidden">
                     <Image
@@ -231,12 +332,16 @@ export default function HomePageClient() {
                       fill
                       className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                      <Play className="w-5 h-5 text-white fill-current" />
+                    <div className={`absolute inset-0 bg-black/40 flex items-center justify-center transition-opacity ${currentTrack === track.audioUrl ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
+                      {currentTrack === track.audioUrl && isPlaying ? (
+                        <Pause className="w-5 h-5 text-white fill-current" />
+                      ) : (
+                        <Play className="w-5 h-5 text-white fill-current" />
+                      )}
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h5 className="text-white font-medium truncate">
+                    <h5 className={`font-medium truncate ${currentTrack === track.audioUrl ? 'text-accent' : 'text-white'}`}>
                       {track.title}
                     </h5>
                     <p className="text-muted text-sm">
@@ -244,7 +349,11 @@ export default function HomePageClient() {
                     </p>
                   </div>
                   <div className="text-muted text-sm font-mono group-hover:text-accent">
-                    {track.duration}
+                    {currentTrack === track.audioUrl && isPlaying ? (
+                      <span className="text-accent animate-pulse">Playing...</span>
+                    ) : (
+                      track.duration
+                    )}
                   </div>
                 </button>
               ))}
